@@ -48,9 +48,9 @@ class App extends Component {
   };
 
   loadGif = () => {
-    const url = "http://api.giphy.com/v1/gifs/random?api_key=".concat(vars.GIPHY_API);
+    const url = "http://api.giphy.com/v1/gifs/random?api_key=".concat(process.env.GIPHY_API);
     request.get(url, (err, res) => {
-      this.setState({gif: res.body.data})
+      this.setState({gif: res.body})
     });
   };
 
@@ -90,7 +90,7 @@ class App extends Component {
           <div className="card-body">
 	    <img
               className="card-img"
-	      src={this.state.gif===""?"https://media.giphy.com/media/j3IyZq87xdTjsCiO88/source.gif":this.state.gif.images.downsized.url}
+	      src={String(this.state.gif)===""?"https://media.giphy.com/media/j3IyZq87xdTjsCiO88/source.gif":this.state.gif.images.downsized.url}
 	      alt="gif" width="300"
 	      height="300" />
           </div>
