@@ -48,7 +48,7 @@ class App extends Component {
   };
 
   loadGif = () => {
-    const url = "http://api.giphy.com/v1/gifs/random?api_key=7b0DPjBxrw63UUJmTlNytjijMQOsOeT4";
+    const url = "http://api.giphy.com/v1/gifs/random?api_key=".concat(vars.GIPHY_API);
     request.get(url, (err, res) => {
       this.setState({gif: res.body.data})
     });
