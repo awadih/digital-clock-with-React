@@ -1,6 +1,6 @@
 # digital-clock-with-React
 
-Digital-Clock with React-App
+A React-app with a digital clock
 
 # RUN
 
