@@ -28,15 +28,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Check directory
-        run: ls -a
       - name: solve opensslErrorStack issue
         run: export NODE_OPTIONS=--openssl-legacy-provider
-      - name: Check directory
-        run: ls -a
       - name: Install all packages listed in a package.json file
         run: npm install
       - name: Run tests listed in App.test.js
         run: npm test
-      - name: Run the start script defined in the package.json file
-        run: npm start
