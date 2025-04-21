@@ -1,6 +1,6 @@
-# digital-clock-with-React
+# A digital clock with React Framework
 
-A React-app with a digital clock
+A React-app with a digital clock 
 
 ## Local Development
 
