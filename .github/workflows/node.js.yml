@@ -28,6 +28,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Create .env file
+        run: |
+          touch .env
+          echo GIPHY_API = ${{ secrets.GIPHY_API }} >> .env
       - name: solve opensslErrorStack issue
         run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Install all packages listed in a package.json file
