@@ -27,4 +27,5 @@ jobs:
       - run: cd digital-clock-with-React/
       - run: npm init
       - run: export NODE_OPTIONS=--openssl-legacy-provider
+      - run: ls -a
       - run: npm start
