@@ -39,15 +39,9 @@ jobs:
       - name: Check directory
         working-directory: ./digital-clock-with-React
         run: ls -a
-      - name: opensslErrorStack-problem
+      - name: npm run & opensslErrorStack
         working-directory: ./digital-clock-with-React
-        run: export NODE_OPTIONS=--openssl-legacy-provider
-      - name: Check directory
-        working-directory: ./digital-clock-with-React
-        run: ls -a
-      - name: npm run
-        working-directory: ./digital-clock-with-React
-        run: npm start
+        run: NODE_OPTIONS=--openssl-legacy-provider npm run start
       - name: Check directory
         working-directory: ./digital-clock-with-React
         run: ls -a
