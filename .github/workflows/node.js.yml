@@ -25,5 +25,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: cd digital-clock-with-React/
+      - run: npm init
       - run: export NODE_OPTIONS=--openssl-legacy-provider
       - run: npm start
