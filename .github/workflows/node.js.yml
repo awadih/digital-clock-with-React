@@ -24,14 +24,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: ls -a
-      - run: cd digital-clock-with-React/
-      - run: ls -a
-      - run: npm init
-      - run: ls -a
-      - run: export NODE_OPTIONS=--openssl-legacy-provider
-      - run: ls -a
-      - run: cd digital-clock-with-React/
-      - run: ls -a
-      - run: npm start
-      - run: ls -a
+      - name: Check directory
+        working-directory: ./digital-clock-with-React
+        run: ls -a
+      - name: solve ssl-problem
+        working-directory: ./digital-clock-with-React
+        run: export NODE_OPTIONS=--openssl-legacy-provider
+      - name: Check directory
+        working-directory: ./digital-clock-with-React
+        run: ls -a
+      - name: npm run
+        working-directory: ./digital-clock-with-React
+        run: npm start
+      - name: Check directory
+        working-directory: ./digital-clock-with-React
+        run: ls -a
