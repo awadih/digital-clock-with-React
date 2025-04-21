@@ -12,6 +12,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./digital-clock-with-React
 
     strategy:
       matrix:
@@ -25,26 +29,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Check directory
-        working-directory: ./digital-clock-with-React
         run: ls -a
-      - name: solve ssl-problem
-        working-directory: ./digital-clock-with-React
+      - name: solve opensslErrorStack issue
         run: export NODE_OPTIONS=--openssl-legacy-provider
       - name: Check directory
-        working-directory: ./digital-clock-with-React
         run: ls -a
-      - name: npm install
-        working-directory: ./digital-clock-with-React
+      - name: Install all packages listed in a package.json file
         run: npm install
-      - name: Check directory
-        working-directory: ./digital-clock-with-React
-        run: ls -a
-      - name: npm test
-        working-directory: ./digital-clock-with-React
+      - name: Run tests listed in App.test.js
         run: npm test
-      - name: npm run & opensslErrorStack
-        working-directory: ./digital-clock-with-React
-        run: npm run start
-      - name: Check directory
-        working-directory: ./digital-clock-with-React
-        run: ls -a
+      - name: Run the start script defined in the package.json file
+        run: npm start
