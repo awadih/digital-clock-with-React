@@ -33,6 +33,12 @@ jobs:
       - name: Check directory
         working-directory: ./digital-clock-with-React
         run: ls -a
+      - name: npm install
+        working-directory: ./digital-clock-with-React
+        run: npm install
+      - name: Check directory
+        working-directory: ./digital-clock-with-React
+        run: ls -a
       - name: npm run
         working-directory: ./digital-clock-with-React
         run: npm start
