@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import request from 'superagent';
-
+import request, { eventNames } from 'superagent';
 
 class App extends Component {
   constructor(props) {
