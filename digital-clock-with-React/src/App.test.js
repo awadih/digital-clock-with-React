@@ -6,10 +6,10 @@ import App from './App';
 describe('App', () => {
   test('renders App component', () => {
     render(<App />);
-    screen.debug();
   });
 });
 
+/** Should check that 'Digital clock' is in the HTML output of the App  */
 test('renders Digital clock', () => {
   render(<App />);
   const linkElement = screen.getByText(/Digital clock/i);
